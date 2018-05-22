@@ -8,7 +8,7 @@ node {
     stage('Initialize'){
         def dockerHome = tool 'myDocker'
         def mavenHome  = tool 'myMaven'
-        env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
+        set PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
     }
 
     stage('Checkout') {
@@ -16,7 +16,7 @@ node {
     }
 
     stage('Build'){
-        sh "mvn clean install"
+         "mvn clean install"
     }}
 
     /*stage('Sonar'){
