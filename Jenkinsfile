@@ -18,7 +18,7 @@ node {
     stage('Build'){
          "mvn clean install"
     }}
-
+echo "completedddd";
     /*stage('Sonar'){
         try {
             sh "mvn sonar:sonar"
