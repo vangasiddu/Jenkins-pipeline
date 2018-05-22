@@ -52,11 +52,12 @@ def imagePrune(containerName){
         "minikube ssh"
          "docker image prune -f"
          "docker stop $containerName"
+        echo "image prune completed"
     } catch(error){}
 }
 
 def imageBuild(containerName, tag){
-    bat "docker build -t $containerName:$tag  -t $containerName --pull --no-cache ."
+     "docker build -t $containerName:$tag  -t $containerName --pull --no-cache ."
     echo "Image build complete"
 }
 
