@@ -1,5 +1,5 @@
 FROM maven:3-alpine
-
+echo "inside dockerrrrrrrrrrrrrr"
 COPY pom.xml pipeline/
 
 COPY src/ pipeline/src/
