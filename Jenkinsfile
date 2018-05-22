@@ -50,7 +50,7 @@ node {
 def imagePrune(containerName){
     try {
         "minikube ssh"
-        bat "docker image prune -f"
+         "docker image prune -f"
          "docker stop $containerName"
         echo "image prune completed"
     } catch(error){}
