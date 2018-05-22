@@ -17,7 +17,7 @@ node {
 
     stage('Build'){
          "mvn clean install"
-    }}
+    }
 echo "completedddd";
     /*stage('Sonar'){
         try {
@@ -25,7 +25,7 @@ echo "completedddd";
         } catch(error){
             echo "The sonar server could not be reached ${error}"
         }
-     }
+     } */
 
     stage("Image Prune"){
         imagePrune(CONTAINER_NAME)
@@ -49,25 +49,25 @@ echo "completedddd";
 
 def imagePrune(containerName){
     try {
-        sh "docker image prune -f"
-        sh "docker stop $containerName"
+         "docker image prune -f"
+         "docker stop $containerName"
     } catch(error){}
 }
 
 def imageBuild(containerName, tag){
-    sh "docker build -t $containerName:$tag  -t $containerName --pull --no-cache ."
+     "docker build -t $containerName:$tag  -t $containerName --pull --no-cache ."
     echo "Image build complete"
 }
 
 def pushToImage(containerName, tag, dockerUser, dockerPassword){
-    sh "docker login -u $dockerUser -p $dockerPassword"
-    sh "docker tag $containerName:$tag $dockerUser/$containerName:$tag"
-    sh "docker push $dockerUser/$containerName:$tag"
+     "docker login -u $dockerUser -p $dockerPassword"
+     "docker tag $containerName:$tag $dockerUser/$containerName:$tag"
+     "docker push $dockerUser/$containerName:$tag"
     echo "Image push complete"
 }
 
 def runApp(containerName, tag, dockerHubUser, httpPort){
-    sh "docker pull $dockerHubUser/$containerName"
-    sh "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
+     "docker pull $dockerHubUser/$containerName"
+     "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
     echo "Application started on port: ${httpPort} (http)"
-}*/
+}
