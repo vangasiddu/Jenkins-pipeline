@@ -61,12 +61,12 @@ def imageBuild(containerName, tag){
     echo "Image build complete"
 }
 
-/* def pushToImage(containerName, tag, dockerUser, dockerPassword){
+ def pushToImage(containerName, tag, dockerUser, dockerPassword){
     sh "docker login -u $dockerUser -p $dockerPassword"
     sh "docker tag $containerName:$tag $dockerUser/$containerName:$tag"
     sh "docker push $dockerUser/$containerName:$tag"
     echo "Image push complete"
-}*/
+}
 
 /* def runApp(containerName, tag, dockerHubUser, httpPort){
     sh "docker pull $dockerHubUser/$containerName"
