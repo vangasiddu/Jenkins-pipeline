@@ -16,8 +16,8 @@ node {
     }
 
     stage('Build'){
-         "mvn clean install"
-    }
+        bat "mvn clean install"
+    }}
 echo "completedddd";
     /*stage('Sonar'){
         try {
@@ -25,7 +25,7 @@ echo "completedddd";
         } catch(error){
             echo "The sonar server could not be reached ${error}"
         }
-     } */
+     } 
 
     stage("Image Prune"){
         imagePrune(CONTAINER_NAME)
@@ -70,4 +70,4 @@ def runApp(containerName, tag, dockerHubUser, httpPort){
      "docker pull $dockerHubUser/$containerName"
      "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
     echo "Application started on port: ${httpPort} (http)"
-}
+}*/
