@@ -41,9 +41,9 @@ node {
         }
     }
 
-   /* stage('Run App'){
+   stage('Run App'){
         runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT)
-    } */
+    } 
 
 }
 
@@ -68,8 +68,8 @@ def imageBuild(containerName, tag){
     echo "Image push complete"
 }
 
-/* def runApp(containerName, tag, dockerHubUser, httpPort){
-    sh "docker pull $dockerHubUser/$containerName"
-    sh "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
+ def runApp(containerName, tag, dockerHubUser, httpPort){
+     "docker pull $dockerHubUser/$containerName"
+     "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
     echo "Application started on port: ${httpPort} (http)"
-} */
+} 
