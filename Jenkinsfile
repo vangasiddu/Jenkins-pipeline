@@ -31,9 +31,9 @@ node {
         imagePrune(CONTAINER_NAME)
     }
 
-   /* stage('Image Build'){
+    stage('Image Build'){
         imageBuild(CONTAINER_NAME, CONTAINER_TAG)
-    }*/
+    }
 
     stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
