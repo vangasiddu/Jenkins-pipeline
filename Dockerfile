@@ -1,6 +1,6 @@
 FROM maven:3-alpine
 
-#COPY pom.xml pipeline/
+COPY pom.xml pipeline/
 
 #COPY src/ pipeline/src/
 
