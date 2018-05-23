@@ -1,12 +1,13 @@
-FROM maven:3-alpine
+#FROM maven:3-alpine
 
-COPY pom.xml pipeline/
+#COPY pom.xml pipeline/
 
-COPY src/ pipeline/src/
+#COPY src/ pipeline/src/
 
-WORKDIR pipeline/
+#WORKDIR pipeline/
 
-RUN mvn clean install
+#RUN mvn clean install
+FROM openjdk:8-jdk-alpine  
 
 EXPOSE 8090
 
